@@ -1,0 +1,32 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "book_flight",
+            "description": "Book a flight for the customer. Call this whenever you need to book a flight, for example when a customer asks 'I want to book a flight from Los Angeles to New York'",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "from_city": {
+                        "type": "string",
+                        "description": "The departure city."
+                    },
+                    "to_city": {
+                        "type": "string",
+                        "description": "The arrival city."
+                    },
+                    "travel_date": {
+                        "type": "string",
+                        "description": "The date of travel."
+                    },
+                    "passenger_name": {
+                        "type": "string",
+                        "description": "The passenger's legal name."
+                    }
+                },
+                "required": ["passenger_name", "from_city", "to_city", "travel_date"],
+                "additionalProperties": false
+            }
+        }
+    }
+]

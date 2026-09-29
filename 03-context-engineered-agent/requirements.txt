@@ -1,0 +1,5 @@
+Faker==40.39.0
+openai==3.20.0
+mcp==2.2.0
+fastapi==0.141.1
+uvicorn==0.54.0

@@ -1,0 +1,90 @@
+{
+  "_note": "Seed context graph. Airport, airline and alliance nodes (and their edges) are derived automatically from supported_locations.json by context_graph.py. All people and trips are fictional.",
+  "nodes": [
+    {"id": "city:dundee", "type": "City", "label": "Dundee", "aliases": ["dundee"]},
+    {"id": "city:edinburgh", "type": "City", "label": "Edinburgh", "aliases": ["edinburgh", "edinburgh city"]},
+    {"id": "city:glasgow", "type": "City", "label": "Glasgow", "aliases": ["glasgow"]},
+    {"id": "city:aberdeen", "type": "City", "label": "Aberdeen", "aliases": ["aberdeen"]},
+    {"id": "city:london", "type": "City", "label": "London", "aliases": ["london"]},
+    {"id": "city:amsterdam", "type": "City", "label": "Amsterdam", "aliases": ["amsterdam", "the netherlands", "holland"]},
+    {"id": "city:paris", "type": "City", "label": "Paris", "aliases": ["paris"]},
+    {"id": "city:dublin", "type": "City", "label": "Dublin", "aliases": ["dublin", "ireland"]},
+    {"id": "city:reykjavik", "type": "City", "label": "Reykjavik", "aliases": ["reykjavik", "reykjavík", "iceland"]},
+    {"id": "city:new-york", "type": "City", "label": "New York", "aliases": ["new york", "nyc", "manhattan"]},
+    {"id": "city:seattle", "type": "City", "label": "Seattle", "aliases": ["seattle"]},
+    {"id": "city:san-diego", "type": "City", "label": "San Diego", "aliases": ["san diego"]},
+    {"id": "city:los-angeles", "type": "City", "label": "Los Angeles", "aliases": ["los angeles"]},
+
+    {"id": "loyalty:avios", "type": "LoyaltyProgramme", "label": "British Airways Club (Avios)", "aliases": ["avios", "executive club", "ba club"]},
+    {"id": "loyalty:flyingblue", "type": "LoyaltyProgramme", "label": "Flying Blue", "aliases": ["flying blue"]},
+
+    {"id": "policy:acme", "type": "TravelPolicy", "label": "Acme Analytics corporate travel policy", "aliases": ["travel policy", "corporate policy", "company policy"]},
+
+    {"id": "pref:aisle-seat", "type": "Preference", "label": "Aisle seat"},
+    {"id": "pref:no-red-eye", "type": "Preference", "label": "Avoid departures before 07:00 or after 22:00"},
+    {"id": "pref:direct-flights", "type": "Preference", "label": "Direct flights strongly preferred"},
+    {"id": "pref:checked-bags", "type": "Preference", "label": "Always needs checked bags"},
+    {"id": "pref:low-price", "type": "Preference", "label": "Price is the top priority"},
+    {"id": "pref:vegetarian", "type": "Preference", "label": "Vegetarian meals"},
+    {"id": "pref:family-hotel", "type": "Preference", "label": "Family rooms / kid-friendly hotels"},
+    {"id": "pref:rail-short-trips", "type": "Preference", "label": "Happy to take the train for short UK trips"},
+
+    {"id": "traveller:alex", "type": "Traveller", "label": "Alex Morgan", "aliases": ["alex", "alex morgan"],
+     "props": {"role": "Senior data consultant at Acme Analytics", "party_size": 1, "typical_cabin": "economy", "budget_gbp": 900}},
+    {"id": "traveller:sam", "type": "Traveller", "label": "Sam Rivera", "aliases": ["sam", "sam rivera"],
+     "props": {"role": "Parent planning family holidays", "party_size": 4, "children": 2, "typical_cabin": "economy", "budget_gbp": 1600}},
+
+    {"id": "trip:alex-2026-05-ams", "type": "Trip", "label": "Alex: EDI to AMS, May 2026",
+     "props": {"date": "2026-05-12", "rating": 5, "note": "Loved the KLM direct flight; hotel near Zuid station was ideal for the office."}},
+    {"id": "trip:alex-2026-02-lcy", "type": "Trip", "label": "Alex: DND to LCY, Feb 2026",
+     "props": {"date": "2026-02-03", "rating": 4, "note": "Dundee to London City is quick, but the flight was full; book early."}},
+    {"id": "trip:sam-2026-07-dub", "type": "Trip", "label": "Sam: GLA to DUB, Jul 2026",
+     "props": {"date": "2026-07-19", "rating": 3, "note": "Paid extra at the airport for 2 checked bags, which cost more than expected."}},
+
+    {"id": "event:amsterdam-data-summit", "type": "Event", "label": "Amsterdam Data Summit 2026", "aliases": ["data summit", "amsterdam data summit"],
+     "props": {"start": "2026-10-14", "end": "2026-10-16", "venue": "RAI Amsterdam"}},
+    {"id": "event:reykjavik-northern-lights", "type": "Event", "label": "Northern lights season", "aliases": ["northern lights", "aurora"],
+     "props": {"start": "2026-09-01", "end": "2027-04-15"}}
+  ],
+  "edges": [
+    {"source": "city:dundee", "relation": "NEAR", "target": "city:edinburgh", "props": {"by_rail": "about 1h30 to Edinburgh Airport via Edinburgh Gateway"}},
+    {"source": "city:dundee", "relation": "NEAR", "target": "city:aberdeen", "props": {"by_rail": "about 1h15"}},
+    {"source": "city:dundee", "relation": "NEAR", "target": "city:glasgow", "props": {"by_rail": "about 1h30 to Glasgow Queen Street, plus bus to GLA"}},
+    {"source": "city:edinburgh", "relation": "NEAR", "target": "city:glasgow", "props": {"by_rail": "about 50 min"}},
+
+    {"source": "loyalty:avios", "relation": "EARNABLE_ON", "target": "airline:BA"},
+    {"source": "loyalty:avios", "relation": "EARNABLE_ON", "target": "airline:EI"},
+    {"source": "loyalty:avios", "relation": "EARNABLE_ON", "target": "airline:AS"},
+    {"source": "loyalty:flyingblue", "relation": "EARNABLE_ON", "target": "airline:KL"},
+    {"source": "loyalty:flyingblue", "relation": "EARNABLE_ON", "target": "airline:AF"},
+    {"source": "loyalty:flyingblue", "relation": "EARNABLE_ON", "target": "airline:DL"},
+
+    {"source": "traveller:alex", "relation": "LIVES_IN", "target": "city:dundee"},
+    {"source": "traveller:alex", "relation": "PREFERS", "target": "pref:aisle-seat"},
+    {"source": "traveller:alex", "relation": "PREFERS", "target": "pref:no-red-eye"},
+    {"source": "traveller:alex", "relation": "PREFERS", "target": "pref:rail-short-trips"},
+    {"source": "traveller:alex", "relation": "MEMBER_OF", "target": "loyalty:avios", "props": {"tier": "Silver"}},
+    {"source": "traveller:alex", "relation": "MEMBER_OF", "target": "loyalty:flyingblue", "props": {"tier": "Explorer"}},
+    {"source": "traveller:alex", "relation": "SUBJECT_TO", "target": "policy:acme"},
+    {"source": "traveller:alex", "relation": "ATTENDING", "target": "event:amsterdam-data-summit"},
+    {"source": "traveller:alex", "relation": "TOOK", "target": "trip:alex-2026-05-ams"},
+    {"source": "traveller:alex", "relation": "TOOK", "target": "trip:alex-2026-02-lcy"},
+    {"source": "trip:alex-2026-05-ams", "relation": "TO", "target": "city:amsterdam"},
+    {"source": "trip:alex-2026-05-ams", "relation": "FLEW_WITH", "target": "airline:KL"},
+    {"source": "trip:alex-2026-02-lcy", "relation": "TO", "target": "city:london"},
+    {"source": "trip:alex-2026-02-lcy", "relation": "FLEW_WITH", "target": "airline:LM"},
+
+    {"source": "traveller:sam", "relation": "LIVES_IN", "target": "city:glasgow"},
+    {"source": "traveller:sam", "relation": "PREFERS", "target": "pref:direct-flights"},
+    {"source": "traveller:sam", "relation": "PREFERS", "target": "pref:checked-bags"},
+    {"source": "traveller:sam", "relation": "PREFERS", "target": "pref:low-price"},
+    {"source": "traveller:sam", "relation": "PREFERS", "target": "pref:vegetarian"},
+    {"source": "traveller:sam", "relation": "PREFERS", "target": "pref:family-hotel"},
+    {"source": "traveller:sam", "relation": "TOOK", "target": "trip:sam-2026-07-dub"},
+    {"source": "trip:sam-2026-07-dub", "relation": "TO", "target": "city:dublin"},
+    {"source": "trip:sam-2026-07-dub", "relation": "FLEW_WITH", "target": "airline:U2"},
+
+    {"source": "event:amsterdam-data-summit", "relation": "LOCATED_IN", "target": "city:amsterdam"},
+    {"source": "event:reykjavik-northern-lights", "relation": "LOCATED_IN", "target": "city:reykjavik"}
+  ]
+}

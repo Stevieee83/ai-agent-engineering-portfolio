@@ -1,0 +1,32 @@
+{
+  "_note": "Illustrative demo data. Airline/airport pairings are simplified and not a real timetable.",
+  "airports": {
+    "DND": {"name": "Dundee Airport", "city": "Dundee", "country": "United Kingdom", "lat": 56.452, "lon": -3.026, "airlines": ["LM"], "routes_only_to": ["LCY"]},
+    "EDI": {"name": "Edinburgh Airport", "city": "Edinburgh", "country": "United Kingdom", "lat": 55.950, "lon": -3.372, "airlines": ["BA", "U2", "KL", "LM", "EI", "FI", "DL", "UA", "AF"]},
+    "GLA": {"name": "Glasgow Airport", "city": "Glasgow", "country": "United Kingdom", "lat": 55.872, "lon": -4.433, "airlines": ["BA", "U2", "LM", "KL", "EI"]},
+    "ABZ": {"name": "Aberdeen Airport", "city": "Aberdeen", "country": "United Kingdom", "lat": 57.202, "lon": -2.198, "airlines": ["BA", "LM", "KL", "U2"]},
+    "LHR": {"name": "London Heathrow", "city": "London", "country": "United Kingdom", "lat": 51.470, "lon": -0.454, "airlines": ["BA", "KL", "EI", "DL", "UA", "AF", "FI", "AS"]},
+    "LCY": {"name": "London City Airport", "city": "London", "country": "United Kingdom", "lat": 51.505, "lon": 0.055, "airlines": ["BA", "LM", "KL"]},
+    "AMS": {"name": "Amsterdam Schiphol", "city": "Amsterdam", "country": "Netherlands", "lat": 52.310, "lon": 4.768, "airlines": ["KL", "U2", "BA", "LM", "DL", "UA", "AF"]},
+    "CDG": {"name": "Paris Charles de Gaulle", "city": "Paris", "country": "France", "lat": 49.009, "lon": 2.547, "airlines": ["AF", "U2", "BA", "DL", "UA", "KL"]},
+    "DUB": {"name": "Dublin Airport", "city": "Dublin", "country": "Ireland", "lat": 53.421, "lon": -6.270, "airlines": ["EI", "BA", "LM", "UA", "DL", "U2"]},
+    "KEF": {"name": "Keflavik International", "city": "Reykjavik", "country": "Iceland", "lat": 63.985, "lon": -22.605, "airlines": ["FI", "U2", "BA"]},
+    "JFK": {"name": "New York JFK", "city": "New York", "country": "United States", "lat": 40.641, "lon": -73.778, "airlines": ["BA", "DL", "EI", "FI", "KL", "AF", "AS", "UA"]},
+    "SEA": {"name": "Seattle-Tacoma", "city": "Seattle", "country": "United States", "lat": 47.450, "lon": -122.309, "airlines": ["AS", "DL", "FI", "BA", "UA"]},
+    "SAN": {"name": "San Diego International", "city": "San Diego", "country": "United States", "lat": 32.734, "lon": -117.190, "airlines": ["AS", "DL", "UA", "BA"]},
+    "LAX": {"name": "Los Angeles International", "city": "Los Angeles", "country": "United States", "lat": 33.942, "lon": -118.408, "airlines": ["AS", "DL", "UA", "BA", "KL", "AF", "EI"]}
+  },
+  "airlines": {
+    "BA": {"name": "British Airways", "alliance": "oneworld", "hub": "LHR", "price_factor": 1.15, "checked_bag_included": false, "has_business": true},
+    "U2": {"name": "easyJet", "alliance": null, "hub": null, "price_factor": 0.7, "checked_bag_included": false, "has_business": false},
+    "KL": {"name": "KLM", "alliance": "SkyTeam", "hub": "AMS", "price_factor": 1.05, "checked_bag_included": true, "has_business": true},
+    "LM": {"name": "Loganair", "alliance": null, "hub": "GLA", "price_factor": 1.35, "checked_bag_included": true, "has_business": false},
+    "EI": {"name": "Aer Lingus", "alliance": null, "hub": "DUB", "price_factor": 0.95, "checked_bag_included": false, "has_business": true},
+    "FI": {"name": "Icelandair", "alliance": null, "hub": "KEF", "price_factor": 1.0, "checked_bag_included": true, "has_business": true},
+    "DL": {"name": "Delta Air Lines", "alliance": "SkyTeam", "hub": "JFK", "price_factor": 1.2, "checked_bag_included": true, "has_business": true},
+    "UA": {"name": "United Airlines", "alliance": "Star Alliance", "hub": "SEA", "price_factor": 1.15, "checked_bag_included": true, "has_business": true},
+    "AF": {"name": "Air France", "alliance": "SkyTeam", "hub": "CDG", "price_factor": 1.1, "checked_bag_included": true, "has_business": true},
+    "AS": {"name": "Alaska Airlines", "alliance": "oneworld", "hub": "SEA", "price_factor": 1.0, "checked_bag_included": false, "has_business": true}
+  },
+  "hotel_cities": ["Dundee", "Edinburgh", "Glasgow", "Aberdeen", "London", "Amsterdam", "Paris", "Dublin", "Reykjavik", "New York", "Seattle", "San Diego", "Los Angeles"]
+}
