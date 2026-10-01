@@ -5,7 +5,10 @@ how an "agent" evolves from hand-written rules, to an LLM with a single tool,
 to an LLM whose context is deliberately engineered (RAG, a knowledge graph,
 reusable skills, and MCP). All three examples share the same scenario — a
 travel-booking agent — so the differences between them come from the
-architecture, not the domain.
+architecture, not the domain. My intention is to develop the examples in
+this repository to use more well established agentic AI and evaluation frameworks
+like [LangGraph](https://www.langchain.com/langgraph), [CrewAI](https://www.crewai.com/)
+and [MLflow](https://mlflow.org/) wherever possible.
 
 Each example is self-contained, with its own `README.md`, dependencies, and
 instructions to run it. This top-level README explains how the examples relate
@@ -61,6 +64,11 @@ also runs without one, falling back to a deterministic offline planner so it
 still demonstrates RAG, the context graph, skills and MCP without network
 access. See each example's `README.md` for full setup, usage, and a suggested
 demo flow.
+
+## Slides
+
+[AI_Agents_What_They_Are_and_Why_They_Matter.pptx](AI_Agents_What_They_Are_and_Why_They_Matter.pptx)
+is the conference deck accompanying this portfolio.
 
 ## License
 
