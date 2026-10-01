@@ -7,11 +7,11 @@ LLM that reasons about the request and calls a tool (function) to act.
 
 ## Files
 
-- **`agent.py`** — a plain-Python utility function (`travel_utility_function`)
+- **`utility.py`** — a plain-Python utility function (`travel_utility_function`)
   that scores travel options on a weighted mix of price, comfort, and
   convenience, then picks the best one. No API calls, no LLM — a clean
   illustration of multi-attribute utility scoring before an LLM is involved.
-- **`agentic.py`** — an OpenAI-powered travel agent. It defines a `book_flight`
+- **`agent.py`** — an OpenAI-powered travel agent. It defines a `book_flight`
   tool, gives it to the model via OpenAI's function/tool-calling API, and
   runs a simple terminal chat loop so a user can converse with the agent and
   have it call the tool to book a flight.
@@ -34,26 +34,26 @@ export OPENAI_API_KEY="your-key-here"
 
 ## Running the examples
 
-**`agent.py`** is a plain script:
+**`utility.py`** is a plain script:
 
 ```bash
-python agent.py
+python utility.py
 ```
 
 It prints the utility score for each hard-coded travel option and reports the
 winner.
 
-**`agentic.py`** runs directly from the terminal:
+**`agent.py`** runs directly from the terminal:
 
 ```bash
-python agentic.py
+python agent.py
 ```
 
 It prints a prompt where you can type a request (e.g. "book me a flight from
 London to New York on 15 October for John Smith"). The agent will ask for any
 missing details, then confirm the booking. Type `quit` or `exit` to stop.
 
-## How the LLM agent works (`agentic.py`)
+## How the LLM agent works (`agent.py`)
 
 1. The `book_flight` tool is described to the model using OpenAI's
    tool-calling schema, loaded from `tools.json` (name, description,
