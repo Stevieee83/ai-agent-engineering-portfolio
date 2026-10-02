@@ -67,7 +67,7 @@ demo flow.
 
 ## Slides
 
-[AI_Agents_What_They_Are_and_Why_They_Matter.pptx](AI_Agents_What_They_Are_and_Why_They_Matter.pptx)
+[AI_Agents_What_They_Are_and_Why_They_Matter.pptx.pdf](AI_Agents_What_They_Are_and_Why_They_Matter.pptx.pdf)
 is the conference deck accompanying this portfolio.
 
 ## License
