@@ -70,6 +70,31 @@ demo flow.
 [AI_Agents_What_They_Are_and_Why_They_Matter.pptx.pdf](AI_Agents_What_They_Are_and_Why_They_Matter.pptx.pdf)
 is the conference deck accompanying this portfolio.
 
+## Disclaimer
+
+This repository is for educational purposes only. Agentic AI systems can act
+autonomously, call external tools, and make decisions with unintended or
+unpredictable consequences. Use the code in this portfolio at your own
+discretion and risk, and review it carefully before running it against real
+data, accounts, or production systems.
+
+All data used in these examples (travellers, bookings, policies, etc.) is
+synthetic and fabricated for demonstration purposes. No personal data
+belonging to any real individual is included in this repository.
+
+## Further reading
+
+For a deeper treatment of the concepts demonstrated here, see
+*Building Agentic AI Systems: Create intelligent, autonomous AI agents that can reason, plan, and adapt* by Anjanava Biswas and Wrick Talukdar (Packt Publishing).
+
+    @book{biswas2025buildingagentic,
+    author    = {Biswas, Anjanava and Wrick Talukdar},
+    title     = {Building Agentic AI Systems: Create intelligent, autonomous AI agents that can reason, plan, and adapt},
+    publisher = {Packt Publishing},
+    year      = {2025},
+    isbn      = {978-1803238753}
+    }
+
 ## License
 
 See [LICENSE](LICENSE).
